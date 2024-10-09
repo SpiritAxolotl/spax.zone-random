@@ -1,0 +1,2 @@
+name = "random"
+main = "worker.js"
