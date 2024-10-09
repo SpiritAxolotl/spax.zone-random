@@ -6,9 +6,16 @@ const randomArrayValue = (arr) => {
 
 export default {
   async fetch(request, env, ctx) {
-    const fetchJSON = async (url) => {
+    const fetchJSON = async (link) => {
       let data = [];
-      await fetch(url)
+      await fetch(link, {
+        method: "GET",
+        headers: new Headers({
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "User-Agent": "SPAX-WEBRING-FETCH"
+        })
+      })
         .then(response => response.json())
         .then(d => data = d);
       return data;
