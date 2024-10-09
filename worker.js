@@ -1,4 +1,4 @@
-const domain = `https://random.spax.zone/webrings`;
+const domain = `https://random.spax.zone/webring-members`;
 
 const fetchJSON = async (url) => {
   let data = [];
@@ -12,8 +12,8 @@ const randomArrayValue = (arr) => {
   return arr[Math.floor(arr.length * Math.random())];
 };
 
-const cobalt = fetchJSON(`${domain}/cobalt.json`);
-const cohost = fetchJSON(`${domain}/cohost.json`);
+const cobalt = await fetchJSON(`${domain}/cobalt.json`);
+const cohost = await fetchJSON(`${domain}/cohost.json`);
 
 export default {
   async fetch(request, env, ctx) {
